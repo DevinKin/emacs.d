@@ -6,12 +6,11 @@
 ;; 初始化包
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'init-packages)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load (expand-file-name "custom.el" user-emacs-directory))
 
-
-(require 'init-packages)
 (require 'init-org)
 (require 'init-linum-mode)
 (require 'init-company)
@@ -19,7 +18,4 @@
 (require 'init-org-publish)
 (require 'init-myfunc)
 (require 'init-ivy)
-
-
-
-
+(require 'init-dired)
