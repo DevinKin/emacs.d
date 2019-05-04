@@ -12,6 +12,7 @@
 
 ;; Add Packages
 (defvar devinkin/packages '(
+			    youdao-dictionary
 			    iedit
 			    expand-region
 			    popwin
