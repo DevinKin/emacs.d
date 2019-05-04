@@ -43,6 +43,10 @@
 			    dracula-theme
 
 			    helm-ag
+
+			    ;; --- programming language ---
+			    slime
+			    
 			    ) "Default packages")
 
 (setq package-selected-packages devinkin/packages)

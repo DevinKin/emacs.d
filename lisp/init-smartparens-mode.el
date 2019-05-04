@@ -5,6 +5,7 @@
 
 ;; emacs-mode下不补全'
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'common-lisp-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)

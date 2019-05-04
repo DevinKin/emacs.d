@@ -11,11 +11,14 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load (expand-file-name "custom.el" user-emacs-directory))
 
+(require 'init-utils)
 (require 'init-org)
-(require 'init-linum-mode)
 (require 'init-company)
+(require 'init-linum-mode)
 (require 'init-smartparens-mode)
 (require 'init-org-publish)
 (require 'init-myfunc)
 (require 'init-ivy)
 (require 'init-dired)
+(require 'init-common-lisp)
+
