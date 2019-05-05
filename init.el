@@ -34,6 +34,7 @@
 (require 'init-haskell)
 (require 'init-git)
 (require 'init-evil)
+(require 'init-markdown)
 
 
 ;(provide 'init)
