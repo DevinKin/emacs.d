@@ -12,6 +12,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load-file custom-file))
 
 (require 'init-packages)
 (require 'init-youdao)
@@ -25,9 +27,9 @@
 (require 'init-ivy)
 (require 'init-dired)
 (require 'init-common-lisp)
+(require 'init-haskell)
 
 
-(when (file-exists-p custom-file)
-  (load custom-file))
 
+(provide 'init)
 
