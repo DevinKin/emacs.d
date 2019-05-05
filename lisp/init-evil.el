@@ -7,18 +7,21 @@
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "ff" 'find-file
+    "fr" 'recentf-open-files
     "bb" 'switch-to-buffer
     "0"  'select-window-0
     "1"  'select-window-1
     "2"  'select-window-2
     "3"  'select-window-3
-    "w/" 'split-window-right
-    "w-" 'split-window-below
+    "wr" 'split-window-right
+    "wb" 'split-window-below
     ":"  'counsel-M-x
     "wM" 'delete-other-windows
     "ud" 'undo-tree-visualize
     "oa" 'org-agenda
     "ms" 'magit-status
+    "llh" 'slime-hyperspec-lookup
+    "sa" 'mark-whole-buffer
     ))
 
 (when (maybe-require-package 'evil-surround)

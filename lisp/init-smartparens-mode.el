@@ -1,11 +1,15 @@
 (require 'smartparens)
 ;; 补全括号
 (add-hook 'prog-mode-hook 'smartparens-mode)
+;; lisp交互模式启用
+(add-hook 'lisp-interaction-mode-hook 'smartparens-mode)
+(add-hook 'slime-repl-mode-hook 'smartparens-mode)
 (add-hook 'after-init-hook 'show-paren-mode)
 
 ;; emacs-mode下不补全'
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-(sp-local-pair 'common-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'lisp-mode "'" nil :actions nil)
+(sp-local-pair 'slime-repl-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)

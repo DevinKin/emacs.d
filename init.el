@@ -36,6 +36,5 @@
 (require 'init-evil)
 (require 'init-markdown)
 
-
 ;(provide 'init)
 

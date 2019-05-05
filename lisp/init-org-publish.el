@@ -87,6 +87,7 @@
          :publishing-directory "/home/devinkin/gitHubPages/notebooks/"
          :publishing-function org-html-publish-to-html
          :headline-levels 1
+	 :htmlized-source t
          :section-numbers nil
          :with-toc t
 	 :html-head-include-scripts nil	 
