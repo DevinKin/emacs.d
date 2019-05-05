@@ -15,6 +15,9 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
+
+(defconst *is-a-mac* (eq system-type 'darwin))
+
 (require 'init-packages)
 (require 'init-youdao)
 (require 'init-utils)
@@ -28,8 +31,8 @@
 (require 'init-dired)
 (require 'init-common-lisp)
 (require 'init-haskell)
+(require 'init-git)
 
 
-
-(provide 'init)
+;(provide 'init)
 

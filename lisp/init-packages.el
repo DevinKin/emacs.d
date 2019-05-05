@@ -46,7 +46,8 @@
 
 			    ;; --- programming language ---
 			    slime
-			    
+
+			    magit
 			    ) "Default packages")
 
 (setq package-selected-packages devinkin/packages)
