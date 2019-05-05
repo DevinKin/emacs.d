@@ -17,6 +17,8 @@
     ":"  'counsel-M-x
     "wM" 'delete-other-windows
     "ud" 'undo-tree-visualize
+    "oa" 'org-agenda
+    "ms" 'magit-status
     ))
 
 (when (maybe-require-package 'evil-surround)
