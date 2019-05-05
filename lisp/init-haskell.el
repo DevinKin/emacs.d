@@ -45,3 +45,5 @@
     (kill-local-variable 'exec-path)))
 
 (add-hook 'haskell-mode-hook 'stack-exec-path-mode)
+
+(provide 'init-haskell)

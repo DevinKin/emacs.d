@@ -10,6 +10,8 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'init-packages)
+(require 'init-utils)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
@@ -18,9 +20,8 @@
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
-(require 'init-packages)
+
 (require 'init-youdao)
-(require 'init-utils)
 (require 'init-org)
 (require 'init-company)
 (require 'init-linum-mode)
@@ -32,6 +33,7 @@
 (require 'init-common-lisp)
 (require 'init-haskell)
 (require 'init-git)
+(require 'init-evil)
 
 
 ;(provide 'init)
