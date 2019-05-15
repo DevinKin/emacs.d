@@ -19,7 +19,21 @@
 
 
 (defconst *is-a-mac* (eq system-type 'darwin))
+(setq *win64* (eq system-type 'windows-nt))
+(setq *cygwin* (eq system-type 'cygwin) )
+(setq *linux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)) )
+(setq *unix* (or *linux* (eq system-type 'usg-unix-v) (eq system-type 'berkeley-unix)) )
+(setq *emacs24* (>= emacs-major-version 24))
+(setq *emacs25* (>= emacs-major-version 25))
+(setq *emacs26* (>= emacs-major-version 26))
 
+;; @see https://www.reddit.com/r/emacs/comments/55ork0/is_emacs_251_noticeably_slower_than_245_on_windows/
+;; Emacs 25 does gc too frequently
+(when *emacs25*
+  ;; (setq garbage-collection-messages t) ; for debug
+  (setq best-gc-cons-threshold (* 64 1024 1024))
+  (setq gc-cons-percentage 0.5)
+  (run-with-idle-timer 5 t #'garbage-collect))
 
 (require 'init-youdao)
 (require 'init-org)
