@@ -158,5 +158,12 @@
 ;; (run-at-time "0 sec" 3600 'agenda-view)
 
 
+;; 设置org-moded代码块支持的语言
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((latex . t)
+   (lisp . t)
+   (emacs-lisp . t)))
+
 
 (provide 'init-org)
