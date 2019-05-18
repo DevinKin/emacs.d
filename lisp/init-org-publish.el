@@ -1,9 +1,9 @@
 ;; ************************************************************
 ;; 	Must Load ox-publish package
 ;; ************************************************************
-;(use-package org
-;  :ensure org-plus-contrib
-;  :defer t)
+					;(use-package org
+					;  :ensure org-plus-contrib
+					;  :defer t)
 
 (require 'ox-md)
 (require 'ox-publish)
@@ -47,6 +47,10 @@
     (buffer-string)))
 
 
+(when *linux*
+  (setq devinkin-base-directory (expand-file-name "~/Documents/gitHubPages/notebooks/"))
+  (setq devinkin-publish-directory (expand-file-name "~/gitHubPages/notebooks/")))
+
 ;; ************************************************************
 ;; 	Change default sitemap index
 ;; ************************************************************
@@ -80,18 +84,19 @@
 ;; 	Notebook related settings
 ;; ************************************************************
 ;; insert src block easily
-(setq org-publish-project-alist
-      '(("orgfiles"
-         :base-directory "/home/devinkin/Documents/gitHubPages/notebooks/"
-         :base-extension "org"
-         :publishing-directory "/home/devinkin/gitHubPages/notebooks/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 1
-	 :htmlized-source t
-         :section-numbers nil
-         :with-toc t
-	 :html-head-include-scripts nil	 
-         :html-head "
+(when *win64*
+  (setq org-publish-project-alist
+	'(("orgfiles"
+	   :base-directory "c:/Users/devinkin/Learning/myblog/prepublish/"
+	   :base-extension "org"
+	   :publishing-directory "c:/Users/devinkin/Learning/myblog/Devinkin.github.io/"
+	   :publishing-function org-html-publish-to-html
+	   :headline-levels 1
+	   :htmlized-source t
+	   :section-numbers nil
+	   :with-toc t
+	   :html-head-include-scripts nil	 
+	   :html-head "
 <meta name=\"baidu-site-verification\" content=\"VsK7KMhTM1\" />
 <link rel=\"stylesheet\" href=\"/style/solarized-dark.css\" type=\"text/css\"/>
 <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\">
@@ -103,32 +108,32 @@
 </script>
 <script>
 (function(){
-    if (location.hostname !== 'huadeyu.tech') {
-        return;
-    }
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName(\"script\")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+	 if (location.hostname !== 'huadeyu.tech') {
+	 return;
+	 }
+	 var bp = document.createElement('script');
+	 var curProtocol = window.location.protocol.split(':')[0];
+	 if (curProtocol === 'https') {
+	 bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	 }
+	 else {
+	 bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	 }
+	 var s = document.getElementsByTagName(\"script\")[0];
+	 s.parentNode.insertBefore(bp, s);
+	 })();
 </script>
 <script>
 var _hmt = _hmt || [];
 (function() {
-  if (location.hostname !== \"huadeyu.tech\") {
-    return;
-  }
-  var hm = document.createElement(\"script\");
-  hm.src = \"https://hm.baidu.com/hm.js?0f9fde052ac9166486f2761c80b2bc93\";
-  var s = document.getElementsByTagName(\"script\")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+	 if (location.hostname !== \"huadeyu.tech\") {
+	 return;
+	 }
+	 var hm = document.createElement(\"script\");
+	 hm.src = \"https://hm.baidu.com/hm.js?0f9fde052ac9166486f2761c80b2bc93\";
+	 var s = document.getElementsByTagName(\"script\")[0]; 
+	 s.parentNode.insertBefore(hm, s);
+	 })();
 </script>
 "
 	 ;; :html-preamble t
@@ -145,24 +150,25 @@ var _hmt = _hmt || [];
 
         ("images"
 	 :recursive t
-         :base-directory "/home/devinkin/Documents/gitHubPages/notebooks/images/"
+         :base-directory "c:/Users/devinkin/Learning/myblog/prepublish/images/"
          :base-extension "jpg\\|gif\\|png\\|jpeg\\|ico"
-         :publishing-directory "/home/devinkin/gitHubPages/notebooks/images/"
+         :publishing-directory "c:/Users/devinkin/Learning/myblog/Devinkin.github.io/images/"
          :publishing-function org-publish-attachment)
 
         ("style"
-         :base-directory "/home/devinkin/Documents/gitHubPages/notebooks/style/"
+         :base-directory "c:/Users/devinkin/Learning/myblog/prepublish/style/"
          :base-extension "css\\|el\\|js"
-         :publishing-directory "/home/devinkin/gitHubPages/notebooks/style/"
+         :publishing-directory "c:/Users/devinkin/Learning/myblog/Devinkin.github.io/style/"
          :publishing-function org-publish-attachment)
 
         ("fonts"
-         :base-directory "/home/devinkin/Documents/gitHubPages/notebooks/fonts/"
+         :base-directory "c:/Users/devinkin/Learning/myblog/prepublish/fonts/"
          :base-extension "eot\\|woff2\\|woff\\|ttf\\|svg"
-         :publishing-directory "/home/devinkin/gitHubPages/notebooks/fonts/"
+         :publishing-directory "c:/Users/devinkin/Learning/myblog/Devinkin.github.io/fonts/"
          :publishing-function org-publish-attachment)	
 
         ("website" :components ("orgfiles" "images" "style" "fonts"))))
+    )
 
 ;; static page setup
 (setq org-html-preamble t)
