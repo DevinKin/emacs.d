@@ -6,6 +6,9 @@
 (add-hook 'slime-repl-mode-hook 'smartparens-mode)
 (add-hook 'after-init-hook 'show-paren-mode)
 
+;; fix hungry-delete & smartparents conflict
+(defadvice hungry-delete-backward (before sp-delete-pair-advice activate) (save-match-data (sp-delete-pair (ad-get-arg 0))))
+
 ;; emacs-mode下不补全'
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-mode "'" nil :actions nil)
