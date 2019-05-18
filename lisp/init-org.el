@@ -118,7 +118,7 @@
 
 ;; org files include in agenda view
 (when *win64*
-  (defvar org-icloud-path "C:/Users/Administrator/AppData/Roaming/.emacs.d/org/"))
+  (defvar org-icloud-path "C:/Users/devinkin/org/"))
 (when *linux*
   (defvar org-icloud-path "/home/devinkin/org/"))
 
