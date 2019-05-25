@@ -47,6 +47,8 @@
 			    ;; go-mode
 			    go-mode
 			    company-go
+			    aggressive-indent
+			    highlight-indent-guides
 
 			    ;; --- programming language ---
 			    slime

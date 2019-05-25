@@ -50,6 +50,7 @@
 (require 'init-evil)
 (require 'init-markdown)
 (require 'init-go)
+(require 'init-hlindent)
 
 ;(provide 'init)
 
