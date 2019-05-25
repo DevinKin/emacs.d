@@ -49,6 +49,7 @@
 (require 'init-git)
 (require 'init-evil)
 (require 'init-markdown)
+(require 'init-go)
 
 ;(provide 'init)
 

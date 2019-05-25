@@ -40,9 +40,13 @@
 			    
 			    ;; org-publish
 			    htmlize
-			    dracula-theme
+			   dracula-theme
 
 			    helm-ag
+
+			    ;; go-mode
+			    go-mode
+			    company-go
 
 			    ;; --- programming language ---
 			    slime
