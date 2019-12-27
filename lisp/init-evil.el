@@ -19,9 +19,10 @@
     "wM" 'delete-other-windows
     "ud" 'undo-tree-visualize
     "oa" 'org-agenda
-    "ms" 'magit-status
+    "mgs" 'magit-status
     "llh" 'slime-hyperspec-lookup
     "sa" 'mark-whole-buffer
+    "fj" 'dired-jump
     ))
 
 (when (maybe-require-package 'evil-surround)

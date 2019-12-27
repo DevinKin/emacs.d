@@ -35,6 +35,8 @@
   (setq gc-cons-percentage 0.5)
   (run-with-idle-timer 5 t #'garbage-collect))
 
+(require 'init-doom-modeline)
+(require 'init-theme)
 (require 'init-youdao)
 (require 'init-org)
 (require 'init-company)
@@ -49,8 +51,9 @@
 (require 'init-git)
 (require 'init-evil)
 (require 'init-markdown)
-(require 'init-go)
 (require 'init-hlindent)
+(require 'init-erlang)
+;(require 'init-go)
 
 ;(provide 'init)
 

@@ -12,11 +12,9 @@
 ;(set-face-attribute 'org-level-4 nil :height 1.4 :bold t)
 
 ;; 导出markdown
-(eval-after-load "org"
-  '(require 'ox-md nil t))
-
-
-
+(maybe-require-package 'ox-gfm)
+(with-eval-after-load 'org
+  (require 'ox-gfm nil t))
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;	Org TODO keywords
@@ -118,9 +116,9 @@
 
 ;; org files include in agenda view
 (when *win64*
-  (defvar org-icloud-path "C:/Users/devinkin/org/"))
+  (defvar org-icloud-path "c:/Users/devin/org/"))
 (when *linux*
-  (defvar org-icloud-path "/home/devinkin/org/"))
+  (defvar org-icloud-path "/home/devin/org/"))
 
 (defvar ep-work-org (concat org-icloud-path "work.org"))
 (defvar ep-learning-org (concat org-icloud-path "learning.org"))
