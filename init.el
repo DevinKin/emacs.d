@@ -53,6 +53,11 @@
 (require 'init-markdown)
 (require 'init-hlindent)
 (require 'init-erlang)
+(require 'init-php)
+(require 'init-paredit)
+(require 'init-lisp)
+(require 'init-clojure)
+(require 'init-clojure-cider)
 ;(require 'init-go)
 
 ;(provide 'init)

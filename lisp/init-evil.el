@@ -23,6 +23,7 @@
     "llh" 'slime-hyperspec-lookup
     "sa" 'mark-whole-buffer
     "fj" 'dired-jump
+    "ps" 'helm-do-ag-project-root
     ))
 
 (when (maybe-require-package 'evil-surround)
