@@ -1,6 +1,4 @@
-(maybe-require-package 'all-the-icons)
-(maybe-require-package 'doom-modeline)
-(require 'all-the-icons)
+(use-package 'all-the-icons)
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
