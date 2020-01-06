@@ -35,6 +35,7 @@
   (setq gc-cons-percentage 0.5)
   (run-with-idle-timer 5 t #'garbage-collect))
 
+(require 'init-tab)
 (require 'init-doom-modeline)
 (require 'init-theme)
 (require 'init-youdao)
@@ -59,7 +60,6 @@
 (require 'init-clojure)
 (require 'init-clojure-cider)
 (require 'init-modal)
-(require 'init-tab)
 ;(require 'init-go)
 
 ;(provide 'init)

@@ -1,51 +1,62 @@
 ;; org-mode
-(require 'org)
-(setq org-src-fontify-natively t)
-;; org Agenda
-(setq org-agenda-files '("~/org"))
-(global-set-key (kbd "C-c a") 'org-agenda)
+(use-package org
+  :commands (org-mode)
+  :ensure t
+  :bind
+  ("C-<tab>" . org-cycle)
 
+  :no-require t
+  :config
+  ;; org export markdown gitpage
+  (when (maybe-require-package 'ox-gfm)
+    (require 'ox-gfm nil t))
+  (setq org-src-fontify-natively t)
+
+  ;; org Agenda
+  (setq org-agenda-files '("~/org"))
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  
+  ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  ;;	Org TODO keywords
+  ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  (setq org-todo-keywords 
+	'((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELED(c)")))
+
+  (setq org-todo-keyword-faces
+	'(("TODO" . org-warning)
+	  ("INPROGRESS" . "yellow")
+	  ("WAITING" . "purple")
+	  ("REVIEW" . "orange")
+	  ("DONE" . "green")
+	  ("CANCELED" .  "red")))
+  ;; close todo with note
+  (setq org-log-done 'note)
+  (setq org-startup-truncated t)
+
+  (setq org-log-into-drawer t)
+  (setq org-agenda-custom-commands
+	'(("b" "Blog idea" tags-todo "BLOG")
+	  ("s" "Someday" todo "SOMEDAY")
+	  ("S" "Started" todo "STARTED")
+	  ("w" "Waiting" todo "WAITING")
+	  ("d" . " 任务安排 ")
+	  ("da" " 重要且紧急的任务 " tags-todo "+PRIORITY=\"A\"")
+	  ("db" " 重要且不紧急的任务 " tags-todo "+PRIORITY=\"B\"")
+	  ("dc" " 不重要且紧急的任务 " tags-todo "+PRIORITY=\"C\"")
+	  ("p" . " 项目安排 ")
+	  ("W" "Weekly Review" tags-todo "PROJECT")))
+
+  (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+  (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+  )
 ;; org-mode标题设置大小，高亮，加粗。
 ;(set-face-attribute 'org-level-1 nil :height 2.0 :bold t)
 ;(set-face-attribute 'org-level-2 nil :height 1.8 :bold t)
 ;(set-face-attribute 'org-level-3 nil :height 1.6 :bold t)
 ;(set-face-attribute 'org-level-4 nil :height 1.4 :bold t)
 
-;; 导出markdown
-(maybe-require-package 'ox-gfm)
-(with-eval-after-load 'org
-  (require 'ox-gfm nil t))
 
-;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;	Org TODO keywords
-;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(setq org-todo-keywords 
-      '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELED(c)")))
-
-(setq org-todo-keyword-faces
-      '(("TODO" . org-warning)
-	("INPROGRESS" . "yellow")
-	("WAITING" . "purple")
-	("REVIEW" . "orange")
-	("DONE" . "green")
-	("CANCELED" .  "red")))
-
-;; close todo with note
-(setq org-log-done 'note)
-(setq org-startup-truncated t)
-
-(setq org-log-into-drawer t)
-(setq org-agenda-custom-commands
-      '(("b" "Blog idea" tags-todo "BLOG")
-	("s" "Someday" todo "SOMEDAY")
-	("S" "Started" todo "STARTED")
-	("w" "Waiting" todo "WAITING")
-	("d" . " 任务安排 ")
-	("da" " 重要且紧急的任务 " tags-todo "+PRIORITY=\"A\"")
-	("db" " 重要且不紧急的任务 " tags-todo "+PRIORITY=\"B\"")
-	("dc" " 不重要且紧急的任务 " tags-todo "+PRIORITY=\"C\"")
-	("p" . " 项目安排 ")
-	("W" "Weekly Review" tags-todo "PROJECT")))
 
 ;; add the org-pomodoro-mode-line to the global-mode-string
 (unless global-mode-string (setq global-mode-string '("")))
@@ -53,15 +64,12 @@
   (setq global-mode-string (append global-mode-string
                                    '(org-pomodoro-mode-line))))
 
-(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; auto toggle todo status
 (defun org-summary-todo (n-done n-not-done)
   "Switch entry to DONE when all subentries are done, to TODO otherwise."
   (let (org-log-done org-log-states)   ; turn off logging
     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
-(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 ;; pomodoro tech setting
 (use-package org-pomodoro
@@ -101,11 +109,11 @@
 
 ;; change a good appearance of todo items
 (use-package org-bullets
+  :init
   :config
-  (progn
-    (setq org-bullets-bullet-list '("☯" "✿" "✚" "◉" "❀"))
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-    ))
+  (setq org-bullets-bullet-list '("☯" "✿" "✚" "◉" "❀"))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 
 (use-package org-alert
   :defer t

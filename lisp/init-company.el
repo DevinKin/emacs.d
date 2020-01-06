@@ -7,7 +7,7 @@
    ("<tab>" . 'user/insert-tab)
 
    :map company-active-map
-   ("<tab>" . 'company-select-next)
+   ("}" . 'company-select-next)
    ("{" . 'company-select-previous)
    ("<escape>" . 'company-abort))
 
