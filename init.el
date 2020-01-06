@@ -59,6 +59,7 @@
 (require 'init-clojure)
 (require 'init-clojure-cider)
 (require 'init-modal)
+(require 'init-tab)
 ;(require 'init-go)
 
 ;(provide 'init)

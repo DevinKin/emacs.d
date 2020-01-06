@@ -15,4 +15,29 @@
 ;; 分屏拷贝
 (setq dired-dwim-target 1)
 
+
+(use-package vscode-icon
+  :ensure t
+  :commands (vscode-icon-for-file))
+
+;; dired-sidebar
+(use-package dired-sidebar
+    :ensure t
+    :commands (dired-sidebar-toggle-sidebar)
+
+    :bind
+    (("C-x C-n" . dired-sidebar-toggle-sidebar)
+
+     :map
+     dired-sidebar-mode-map
+     ("q" . 'kill-buffer-and-window))
+
+    :init
+    (add-hook 'dired-sidebar-mode-hook 'hl-line-mode)
+    (setq dired-sidebar-subtree-line-prefix " ")
+    (setq dired-sidebar-theme 'vscode)
+    ;(setq dired-sidebar-theme 'ascii)
+    (setq dired-sidebar-use-custom-font t)
+    )
+
 (provide 'init-dired)

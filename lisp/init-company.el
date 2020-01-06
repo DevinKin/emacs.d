@@ -1,5 +1,25 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
+(use-package company
+  :ensure t
+  :bind
+  (:map company-mode-map
+   ("<tab>" . 'user/insert-tab)
+
+   :map company-active-map
+   ("<tab>" . 'company-select-next)
+   ("{" . 'company-select-previous)
+   ("<escape>" . 'company-abort))
+
+  :init
+  (setq company-idle-delay nil
+	company-dabbrev-downcase nil
+	company-abort-manual-when-too-short t
+	company-require-match nil
+	company-global-modes '(not dired-mode dired-sidebar-mode)
+	)
+  )
+
 (eval-after-load 'company
   '(progn
      ;; I don't like the downcase word in company-dabbrev!

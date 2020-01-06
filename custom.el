@@ -62,7 +62,7 @@
     ("c:/Users/devin/org/work.org" "c:/Users/devin/org/learning.org" "c:/Users/devin/org/personal.org" "c:/Users/devin/org/inbox.org")))
  '(package-selected-packages
    (quote
-    (clj-refactor linum-relative flycheck-clojure cider elein cljsbuild-mode clojure-mode paredit company-php smarty-mode php-mode ox-gfm erlang which-key window-numbering doom-modeline solarized-theme markdown-mode evil-nerd-commenter evil-surround evil-leader evil fullframe magit-todos git-timemachine gitconfig-mode gitignore-mode git-blamed intero haskell-mode youdao-dictionary iedit expand-region popwin company hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell darkburn-theme use-package org-bullets org-pomodoro org-alert htmlize dracula-theme helm-ag go-mode company-go aggressive-indent highlight-indent-guides slime magit))))
+    (vscode-icon dired-sidebar clj-refactor linum-relative flycheck-clojure cider elein cljsbuild-mode clojure-mode paredit company-php smarty-mode php-mode ox-gfm erlang which-key window-numbering doom-modeline solarized-theme markdown-mode evil-nerd-commenter evil-surround evil-leader evil fullframe magit-todos git-timemachine gitconfig-mode gitignore-mode git-blamed intero haskell-mode youdao-dictionary iedit expand-region popwin company hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell darkburn-theme use-package org-bullets org-pomodoro org-alert htmlize dracula-theme helm-ag go-mode company-go aggressive-indent highlight-indent-guides slime magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
