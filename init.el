@@ -59,7 +59,7 @@
 (require 'init-lisp)
 (require 'init-clojure)
 (require 'init-clojure-cider)
-(require 'init-modal)
+(require 'init-python)
 ;(require 'init-go)
 
 ;(provide 'init)

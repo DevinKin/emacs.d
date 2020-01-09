@@ -50,6 +50,7 @@
 
 (use-package clojure-mode
   :bind
+  :defer t
   (:map clojure-mode-map
 	("C-c C-i" . 'cider-inspect-last-result)
 	("C-#" . 'user/clojure-comment))

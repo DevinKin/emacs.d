@@ -52,5 +52,5 @@ site-lisp/package/
 /transient
 /org
 /server
-/eply
+/elpy
 /.python*
