@@ -54,3 +54,4 @@ site-lisp/package/
 /server
 /elpy
 /.python*
+/irony

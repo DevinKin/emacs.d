@@ -1,4 +1,5 @@
-(use-package 'all-the-icons)
+(use-package all-the-icons
+  :ensure t)
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
