@@ -62,6 +62,7 @@
 (require 'init-python)
 (require 'init-c-c++)
 (require 'init-html)
+(require 'init-rust)
 ;(require 'init-go)
 
 ;(provide 'init)

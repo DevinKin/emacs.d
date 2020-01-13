@@ -21,7 +21,7 @@
   :config (progn
 	    (setq clang-format-style "llvm")))
 
-(use-package cmake-id
+(use-package cmake-ide
   :ensure t
   :init (progn
 	  (add-hook 'c++-mode-hook (lambda () (cmake-ide-setup)))
