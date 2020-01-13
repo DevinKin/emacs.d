@@ -23,6 +23,28 @@
   :ensure t
   :defer t
   :init
-  (advice-add 'python-mode :before 'elpy-enable))
+  (advice-add 'python-mode :before 'elpy-enable)
+  (add-to-list 'company-backends 'elpy-company-backend)
+  )
+
+
+(use-package python
+  :ensure t
+  :bind
+  (:map python-mode-map
+	("C-c /" . 'devinkin/py-func-comment)
+   ))
+
+(defun devinkin/py-func-comment()
+  "Python function comment."
+  (interactive)
+  (insert "\"\"\"")
+  (newline-and-indent)
+  (insert "comment")
+  (save-mark-and-excursion
+    (newline-and-indent)
+    (insert "\"\"\""))
+  )
+
 
 (provide 'init-python)

@@ -61,6 +61,7 @@
 (require 'init-clojure-cider)
 (require 'init-python)
 (require 'init-c-c++)
+(require 'init-html)
 ;(require 'init-go)
 
 ;(provide 'init)
