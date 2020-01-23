@@ -108,6 +108,41 @@
   :config (progn
 	    (eval-after-load "cc-mode"
 	      '(define-key c-mode-base-map ";" nil)))
+
+  :bind
+  (:map c-mode-map
+   ("C-c C-r" . devinkin/gcc-compile-and-run))
   )
+
+
+(defvar devinkin-default-gcc-compile-command "gcc -std=c99 -Wall")
+
+
+(defun devinkin/compile-with-command-and-run (command oth-source-file)
+  "Compile c/c++ with COMMAND and run it"
+  (let ((file-name (buffer-file-name))
+	(output (file-name-base (buffer-file-name)))
+	(source-file (mapconcat 'identity
+				(mapcar #'(lambda (s)
+					    (concat default-directory s))
+					(split-string oth-source-file " "))
+				" ")))
+    (message output)
+    (if (eq system-type 'windows-nt)
+	(compile (format "%s %s %s -o %s.exe && .\\%s.exe && rm %s.exe" command file-name source-file output output output))
+      (compile (format "%s %s %s -o %s && ./%s && rm %s" command file-name source-file output output output)))
+    ))
+
+
+
+(defun devinkin/gcc-compile-and-run (command oth-source-file)
+  "Compile c with gcc and run it COMMAND."
+  (interactive
+   (list (read-string (format "Compile and run command [default: %s]:" devinkin-default-gcc-compile-command)
+		      nil nil devinkin-default-gcc-compile-command)
+	 (read-string (format "Other Source file [default: %s]:" "main.c")
+		      nil nil " main.c ")))
+  (devinkin/compile-with-command-and-run command oth-source-file))
+
 
 (provide 'init-c-c++)

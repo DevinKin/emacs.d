@@ -68,10 +68,12 @@
   :config
   (setq company-tooltip-align-annotations t)
 
-  ;:bind
-  ;(:map racer-mode-map
-	;("<tab>" . #'company-indent-or-complete-common)
-  ;)
+  :bind
+  (:map racer-mode-map
+	("<tab>" . #'company-indent-or-complete-common)
+	("C-c C-d" . #'racer-describe)
+	("C-c f f" . #'racer-find-definition)
+  )
   )
 
 (provide 'init-rust)
