@@ -73,12 +73,19 @@
 (use-package company-c-headers
   :ensure t
   :defer t
-  :init (progn (add-hook 'c-mode-hook
-			 (lambda () (add-to-list 'company-backends 'company-c-headers))
-			 )
-	       (add-hook 'c++-mode-hook
-			 (lambda () (add-to-list 'company-backends 'company-c-headers)))
-	       )
+  :init (progn
+	  (cond
+	   ((eq system-type 'windows-nt)
+	    (setq company-c-headers-path-system '("D:\\msys2\\mingw64\\x86_64-w64-mingw32\\include"
+						  "D:\\msys2\\mingw64\\include"
+						  "D:\\msys2\\mingw64\\include\\c++\\9.2.0")))
+	   )
+	  (add-hook 'c-mode-hook
+		    (lambda () (add-to-list 'company-backends 'company-c-headers))
+		    )
+	  (add-hook 'c++-mode-hook
+		    (lambda () (add-to-list 'company-backends 'company-c-headers)))
+	  )
   )
 ;;; backends for irony
 (use-package company-irony
@@ -90,19 +97,10 @@
 			 (lambda () (add-to-list 'company-backends 'company-irony)))
 	       ))
 
-;;; backends for irony-c-header
-(use-package company-irony-c-headers
-  :ensure t
-  :defer t
-  :init (progn (add-hook 'c-mode-hook
-			 (lambda () (add-to-list 'company-backends 'company-irony-c-headers)))
-	       (add-hook 'c++-mode-hook
-			 (lambda () (add-to-list 'company-backends 'company-irony-c-headers)))
-	       ))
 (use-package cc-mode
   :mode
   (("\\.c\\'" . c-mode)
-   ("\\.h\\'" . c++-mode)
+   ("\\.h\\'" . c-mode)
    ("\\.hpp\\'" . c++-mode)
    ("\\.cpp\\'" . c++-mode))
   :config (progn
