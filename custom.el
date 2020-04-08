@@ -11,6 +11,9 @@
 ;; 更改显示字体大小, 16pt
 (set-face-attribute 'default nil :height 140)
 
+(setq mode-line-format nil)
+(setq-default mode-line-format nil)
+
 ;; 去掉自动备份文件
 (setq make-backup-files nil)
 
@@ -24,8 +27,8 @@
 ;(setq-default mode-line-format nil)
 
 ;; 行号标注
-(maybe-require-package 'window-numbering)
-(window-numbering-mode t)
+;;(maybe-require-package 'window-numbering)
+;;(window-numbering-mode t)
 
 ;; 快捷键提示模式
 (maybe-require-package 'which-key)
