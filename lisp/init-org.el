@@ -126,7 +126,7 @@
 (when *win64*
   (defvar org-icloud-path "c:/Users/devin/org/"))
 (when *linux*
-  (defvar org-icloud-path "/home/devin/org/"))
+  (defvar org-icloud-path "/home/devinkin/org/"))
 
 (defvar ep-work-org (concat org-icloud-path "work.org"))
 (defvar ep-learning-org (concat org-icloud-path "learning.org"))

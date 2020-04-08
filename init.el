@@ -36,7 +36,7 @@
   (run-with-idle-timer 5 t #'garbage-collect))
 
 (require 'init-tab)
-(require 'init-doom-modeline)
+;(require 'init-doom-modeline)
 (require 'init-theme)
 (require 'init-youdao)
 (require 'init-org)
