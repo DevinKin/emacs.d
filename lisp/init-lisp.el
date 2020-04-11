@@ -1,3 +1,7 @@
+
+;; disable emacs-lisp-checkdoc
+(setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
 ;; ----------------------------------------------------------------------------
 ;; Enable desired features for all lisp modes
 ;; ----------------------------------------------------------------------------

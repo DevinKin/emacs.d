@@ -128,42 +128,42 @@
 (when *linux*
   (defvar org-icloud-path "/home/devinkin/org/"))
 
-(defvar ep-work-org (concat org-icloud-path "work.org"))
-(defvar ep-learning-org (concat org-icloud-path "learning.org"))
-(defvar ep-personal-org (concat org-icloud-path "personal.org"))
-(defvar ep-inbox-org (concat org-icloud-path "inbox.org"))
-(defvar ep-habit-org (concat org-icloud-path "habit.org"))
+;; (defvar ep-work-org (concat org-icloud-path "work.org"))
+;; (defvar ep-learning-org (concat org-icloud-path "learning.org"))
+;; (defvar ep-personal-org (concat org-icloud-path "personal.org"))
+;; (defvar ep-inbox-org (concat org-icloud-path "inbox.org"))
+;; (defvar ep-habit-org (concat org-icloud-path "habit.org"))
 
-(setq org-agenda-files (list ep-work-org
-			     ep-learning-org
-			     ep-personal-org
-			     ep-inbox-org
-			     ep-habit-org))
-(setq org-archive-location (concat  "/Users/deyuhua/Workspace/Archive/Orgs/" "%s_archive::"))
+;; (setq org-agenda-files (list ep-work-org
+;; 			     ep-learning-org
+;; 			     ep-personal-org
+;; 			     ep-inbox-org
+;; 			     ep-habit-org))
+;; (setq org-archive-location (concat  "/Users/deyuhua/Workspace/Archive/Orgs/" "%s_archive::"))
 
 ;; org caputer settings
-(setq org-default-notes-file ep-inbox-org)
-(define-key global-map "\C-cc" 'org-capture)
+;; (setq org-default-notes-file ep-inbox-org)
+;; (define-key global-map "\C-cc" 'org-capture)
 
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline ep-inbox-org "代办事项")
-         "* TODO %?\n %i\n")))
+;; (setq org-capture-templates
+;;       '(("t" "Todo" entry (file+headline ep-inbox-org "代办事项")
+;;          "* TODO %?\n %i\n")))
 
-(setq org-refile-targets
-      '((ep-learning-org :maxlevel . 1)
-        (ep-work-org :maxlevel . 1)
-	(ep-personal-org :maxlevel . 1)
-	(ep-habit-org :maxlevel . 1)))
+;; (setq org-refile-targets
+;;       '((ep-learning-org :maxlevel . 1)
+;;         (ep-work-org :maxlevel . 1)
+;; 	(ep-personal-org :maxlevel . 1)
+;; 	(ep-habit-org :maxlevel . 1)))
 
-;; open agenda view when emacs startup
-(defun agenda-view()
-  (interactive)
-  (progn
-    (org-agenda 'a "a")
-    (delete-other-windows)))
+;; ;; open agenda view when emacs startup
+;; (defun agenda-view()
+;;   (interactive)
+;;   (progn
+;;     (org-agenda 'a "a")
+;;     (delete-other-windows)))
 
 ;; emacs启动时查看安排
-(add-hook 'emacs-startup-hook 'agenda-view)
+;; (add-hook 'emacs-startup-hook 'agenda-view)
 ;; open agenda view every hour
 ;; (run-at-time "0 sec" 3600 'agenda-view)
 
@@ -173,7 +173,8 @@
  'org-babel-load-languages
  '((latex . t)
    (lisp . t)
-   (emacs-lisp . t)))
+   (emacs-lisp . t)
+   (clojure . t)))
 
 
 (provide 'init-org)

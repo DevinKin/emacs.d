@@ -11,9 +11,12 @@
 
 ;; emacs-mode下不补全'
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-mode "'" nil :actions nil)
 (sp-local-pair 'slime-repl-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
+(sp-local-pair 'clojure-mode "'" nil :actions nil)
+(sp-local-pair 'cider-repl-mode "'" nil :actions nil)
 
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)
   "Highlight enclosing parens."

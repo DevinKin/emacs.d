@@ -63,6 +63,10 @@
 (require 'init-c-c++)
 (require 'init-html)
 (require 'init-rust)
+(require 'init-rime)
+(require 'init-global)
+(require 'init-project)
+(require 'init-snippet)
 ;(require 'init-go)
 
 ;(provide 'init)
