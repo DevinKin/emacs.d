@@ -7,7 +7,7 @@
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "ff" 'find-file
-    "fr" 'recentf-open-files
+    "fr" 'helm-recentf
     "bb" 'switch-to-buffer
     "0"  'select-window-0
     "1"  'select-window-1

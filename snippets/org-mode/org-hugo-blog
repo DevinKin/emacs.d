@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: org-hugo-blog
+# key: ohb
+# --
+
+#+hugo_base_dir: /home/devinkin/hugo_blog
+#+hugo_section:  ./post
+#+title: $1
+#+author:
+#+hugo_custom_front_matter: :author "devinkin"
+#+hugo_weight: auto
+#+hugo_auto_set_lastmod: t
+#+hugo_categories: $2
+#+hugo_tags: `yas-selected-text`$0

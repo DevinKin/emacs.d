@@ -67,6 +67,7 @@
 (require 'init-global)
 (require 'init-project)
 (require 'init-snippet)
+(require 'init-ox-hugo)
 ;(require 'init-go)
 
 ;(provide 'init)

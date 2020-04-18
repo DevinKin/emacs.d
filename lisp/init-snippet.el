@@ -67,6 +67,7 @@
   :init
   (add-hook 'snippet-mode-hook #'smartparens-mode)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
+  (add-hook 'org-mode-hook #'yas-minor-mode)
   (add-hook 'yas-minor-mode-hook #'+yas-load-local-snippets)
   )
 

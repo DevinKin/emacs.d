@@ -2,10 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(when (maybe-require-package 'markdown-mode)
-  (add-auto-mode 'markdown-mode "\\.md\\.html\\'")
-  (after-load 'whitespace-cleanup-mode
-    (push 'markdown-mode whitespace-cleanup-mode-ignore-modes)))
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+	 ("\\.md\\'" . markdown-mode)
+	 ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 
 (provide 'init-markdown)
