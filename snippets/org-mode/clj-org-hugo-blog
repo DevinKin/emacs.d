@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: org-hugo-blog
-# key: ohb
+# name: clj-org-hugo-blog
+# key: cljohb
 # --
 
 #+hugo_base_dir: /home/devinkin/hugo_blog
@@ -10,5 +10,5 @@
 #+hugo_custom_front_matter: :author "devinkin"
 #+hugo_weight: auto
 #+hugo_auto_set_lastmod: t
-#+hugo_categories: $3
-#+hugo_tags: `yas-selected-text`$0
+#+hugo_categories: Clojure
+#+hugo_tags: Clojure Lisp
