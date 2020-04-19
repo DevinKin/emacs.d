@@ -34,8 +34,8 @@
   :init
   (setq evil-magit-state 'normal)
   (setq evil-magit-use-y-for-yank t)
-  :config
-  (evil-magit-revert)
+  ;:config
+  ;(evil-magit-revert)
   )
 
 (provide 'init-git)
