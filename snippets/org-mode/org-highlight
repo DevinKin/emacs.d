@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org-highlight
+# key: ohl
+# --
+~$1~ $2
