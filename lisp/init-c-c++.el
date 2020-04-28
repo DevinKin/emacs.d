@@ -109,9 +109,10 @@
 
   :bind
   (:map c-mode-map
-   ("C-c C-r" . devinkin/gcc-compile-and-run))
+	("C-c C-r" . devinkin/gcc-compile-and-run)
+	("RET" . user/new-line-dwim)
+	)
   )
-
 
 (defvar devinkin-default-gcc-compile-command "gcc -std=c99 -Wall")
 
@@ -142,5 +143,17 @@
 		      nil nil " main.c ")))
   (devinkin/compile-with-command-and-run command oth-source-file))
 
+(defun user/new-line-dwim ()
+  (interactive)
+  (let ((break-open-pair (or (and (looking-back "{") (looking-at "}"))
+                             (and (looking-back ">") (looking-at "<"))
+                             (and (looking-back "(") (looking-at ")"))
+                             (and (looking-back "\\[") (looking-at "\\]")))))
+    (newline)
+    (when break-open-pair
+      (save-excursion
+        (newline)
+        (indent-for-tab-command)))
+    (indent-for-tab-command)))
 
 (provide 'init-c-c++)
