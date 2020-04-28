@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org-text-link
+# key: otl
+# --
+[[$2][$1]]
