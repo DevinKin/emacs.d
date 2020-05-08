@@ -64,6 +64,7 @@
   (unbind-key "<tab>" yas-keymap)
   (unbind-key "TAB" yas-keymap)
   (unbind-key "S-TAB" yas-keymap)
+  (advice-add 'yas--auto-fill-wrapper :override #'ignore)
   :init
   (add-hook 'snippet-mode-hook #'smartparens-mode)
   (add-hook 'prog-mode-hook #'yas-minor-mode)

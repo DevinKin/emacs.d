@@ -49,12 +49,13 @@
   (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
   (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+	;; org-mode标题设置大小，高亮，加粗。
+	(set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
+	(set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
+	(set-face-attribute 'org-level-3 nil :height 1.2 :bold t)
+	(set-face-attribute 'org-level-4 nil :height 1.0 :bold t)
   )
-;; org-mode标题设置大小，高亮，加粗。
-;(set-face-attribute 'org-level-1 nil :height 2.0 :bold t)
-;(set-face-attribute 'org-level-2 nil :height 1.8 :bold t)
-;(set-face-attribute 'org-level-3 nil :height 1.6 :bold t)
-;(set-face-attribute 'org-level-4 nil :height 1.4 :bold t)
 
 
 
