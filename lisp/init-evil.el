@@ -6,7 +6,7 @@
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
-    "ff" 'find-file
+    "ff" 'helm-find-files
     "fr" 'helm-recentf
     "bb" 'switch-to-buffer
     "0"  'select-window-0

@@ -17,6 +17,8 @@
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 (sp-local-pair 'clojure-mode "'" nil :actions nil)
 (sp-local-pair 'cider-repl-mode "'" nil :actions nil)
+(sp-local-pair 'clojure-mode "`" nil :actions nil)
+(sp-local-pair 'cider-repl-mode "`" nil :actions nil)
 
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)
   "Highlight enclosing parens."

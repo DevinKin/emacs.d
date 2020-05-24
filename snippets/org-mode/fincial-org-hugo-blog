@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: finacial-management-org-hugo-blog
+# key: fnohb
+# --
+
+#+hugo_base_dir: /home/devinkin/hugo_blog
+#+hugo_section:  ./post/finacialManagement/$1
+#+title: $2
+#+author:
+#+hugo_custom_front_matter: :author "devinkin"
+#+hugo_weight: auto
+#+hugo_auto_set_lastmod: t
+#+hugo_categories: 财务管理
+#+hugo_tags: 理财 投资

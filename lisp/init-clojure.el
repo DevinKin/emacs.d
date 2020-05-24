@@ -52,9 +52,13 @@
   :bind
   (:map clojure-mode-map
 	("C-c C-i" . 'cider-inspect-last-result)
-	("C-#" . 'user/clojure-comment))
+	("C-#" . 'user/clojure-comment)
+	("C-<delete>" . 'hungry-delete-forward)
+	("C-<backspace>" . 'hungry-delete-backward)
+	)
   :init
   (setq clojure-toplevel-inside-comment-form t)
+  (add-hook 'clojure-mode-hook 'hungry-delete-mode)
   :config
   (modify-syntax-entry ?: "w" clojure-mode-syntax-table)
   (setq clojure-indent-style 'always-indent)
