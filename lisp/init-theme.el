@@ -9,9 +9,15 @@
 ;  :config
 ;  (load-theme 'zenburn t)
 ;  )
-(use-package material-theme
+;(use-package material-theme
+;  :ensure t
+;  :config
+;  (load-theme 'material t))
+
+(use-package tron-legacy-theme
   :ensure t
   :config
-  (load-theme 'material t))
-
+  (setq tron-legacy-theme-vivid-cursor t)
+  (setq tron-legacy-theme-softer-bg t)
+  (load-theme 'tron-legacy t))
 (provide 'init-theme)
