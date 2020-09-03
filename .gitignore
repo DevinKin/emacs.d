@@ -56,3 +56,4 @@ site-lisp/package/
 /.python*
 /irony
 /rime
+*recentf
