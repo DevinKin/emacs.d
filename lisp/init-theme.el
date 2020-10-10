@@ -16,6 +16,7 @@
 
 (use-package all-the-icons
   :ensure t)
+
 (use-package doom-themes
   :ensure t
   :config
@@ -35,5 +36,7 @@
   
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
+
+(set-frame-parameter (selected-frame) 'alpha 90)
 
 (provide 'init-theme)
